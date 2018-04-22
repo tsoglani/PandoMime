@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected static String ROUNDS = "game_rounds", TIME = "game_timer_per_game";
     private IndicatorSeekBar timer_seek_bar;
     private RadioGroup radioGroup;
-private String info="Παιχνίδι παντομίμας με της αναγράφουσες υποκατηγορίες, μέσα στο παιχνίδι υπάρχει η επιλογή για αλλαγή της φράσης για κάθε ομάδα.\n\n " +
-        "Καλή διασκέδαση. \n\n\n\nDeveloper: Gaitanis Nikos\nDesigner:Giannis Tzortzis\nExternal partner: Alexandros Tomadakis.";
+private String info="Παιχνίδι παντομίμας με τις αναγράφουσες υποκατηγορίες, μέσα στο παιχνίδι υπάρχει η επιλογή για αλλαγή της φράσης για κάθε ομάδα.\n\n " +
+        "Καλή διασκέδαση. \n\n\n\nDeveloper: Gaitanis Nikos\nDesigner: Giannis Tzortzis\nExternal partner: Alexandros Tomadakis.";
     public static enum TYPE {atakes, diafimiseis, tainies, seires, aisthisiakes, paroimies, mix}
 
     public static TYPE selectedType;

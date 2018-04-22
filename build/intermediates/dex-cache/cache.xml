@@ -3,21 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/98030e02a9a431d2b584e1931dbafd6a61b94c2a/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/b7daf827cfd67d5d5670db5c829c8561c1ad90ce/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_4b9229e4ffdf8fdade94e257744459be5d023cc4.jar" />
+        sha1="0165a9fb28c8333504f837916f8b32c1ee38afca">
+        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_1daba2f9f87e34fdb0ffea98f13a4e3f862edd44.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/52f1faa92077c5e2fc4ca0372d193565dc16be34/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/f404aa1e7b4c1c29bfda194cb552faa21f20421a/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="ee394a892dd21c03a528139c1e8d4e0e1264ac84">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_7568c929d31072112eed3b9cddbc2ac49cdc6ada.jar" />
+        sha1="73c6558aeae89d52c3ab66e6e855b18ed808986b">
+        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_60e6ef3af6427a6dba32c73588aadf5546fda5dc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -27,6 +27,51 @@
         revision="27.0.3"
         sha1="54bbec708e0e3b55413da10223c54a1f61ae0c0c">
         <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_00ff2bed09b58e8bd6c0987fcdd8533766637eeb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/7af6bf7352499cbdbc17d42b970e0a1527f1655e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="34f5bdf6595d0e5647e6ff5380bae62c97fe572b">
+        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_fa9836d8cd51ba1289270403d346072176a1ef31.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/26023d8a0340432adbdf5da3c31db9f023a8d073/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="50fe77ff10df20e52e887c0ab44bad8b9ca1760f">
+        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_e3ba79b98569f25deab5a0156a63c7a36425be08.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/b0533436bd3a29e346b0c7c60842bc0a1e53bed4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c07188f722ee6dd9106ef86d8bffb125e9735fb6">
+        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_9ce2965632ed0bb0ad9cd8549d9c235ce4b3062e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/89a55f0672489e24e48d7c27ea771470bd255d28/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e92f73c64f9b7113a11b75a483016ab4ac335d5a">
+        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_647f186bd9d7f0ed828da9c98f0f367a3f50525f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/71ee5c87a7b95a7ffd7c8128d1c7f874c1c421e0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c8a10dccac2dc5fc55aacaf0c4a91aab870d14fb">
+        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_6f4cb03728d6cc65ffa9da40b8f0784ab0950ef2.jar" />
     </item>
 
 </items>
