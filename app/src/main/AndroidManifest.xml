@@ -33,7 +33,16 @@
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:multiprocess="true"
-        android:process=":remote"></activity>
+
+        android:process=":remote">
+            <intent-filter>
+                <!-- The following two intent-filters are the key to set homescreen -->
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+
+        </activity>
         <!--Include the AdActivity configChanges and theme. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

@@ -9,6 +9,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -34,6 +35,9 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.formats.NativeAdOptions;
 import com.google.android.gms.ads.formats.NativeAppInstallAd;
 import com.google.android.gms.ads.formats.NativeContentAd;
+import com.google.android.gms.ads.reward.RewardItem;
+import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,7 +48,7 @@ import java.util.HashSet;
 import java.util.List;
 
 
-public class MoviesGameActivity extends AppCompatActivity {
+public class MoviesGameActivity extends AppCompatActivity implements RewardedVideoAdListener{
 
     private boolean isPlayerOne = true;
     private int gameRounds = 5;
@@ -72,13 +76,15 @@ public class MoviesGameActivity extends AppCompatActivity {
     private LinearLayout scoreView;
     private MediaPlayer mp;
     private String skips_textString;
-
+ PowerManager.WakeLock wakeLock;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies_game);
 
-
+        final PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+        wakeLock = pm.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK, "My Tag");
+        wakeLock.acquire();
         imageView = (ImageView) findViewById(R.id.player_icons);
         start_game_button = (Button) findViewById(R.id.start_game_button);
         correct_button = (Button) findViewById(R.id.correct_button);
@@ -217,47 +223,138 @@ public class MoviesGameActivity extends AppCompatActivity {
 
 try {
     MobileAds.initialize(this, appID);
+
 //        AdView  mAdView = (AdView) findViewById(R.id.adView);
 //        AdRequest adRequest = new AdRequest.Builder().build();
 //        mAdView.loadAd(adRequest);
+    mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+    mRewardedVideoAd.setRewardedVideoAdListener(this);
 
-    mInterstitialAd = new InterstitialAd(this);
-    mInterstitialAd.setAdUnitId(AD_UNIT_ID);
-    mInterstitialAd.loadAd(new AdRequest.Builder().build());
-    mInterstitialAd.setAdListener(new AdListener() {
-
-        @Override
-        public void onAdLoaded() {
-            //Remove show() code from here
-            mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
-        }
-    });
+//    mInterstitialAd = new InterstitialAd(this);
+//    mInterstitialAd.setAdUnitId(AD_UNIT_ID);
+//    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//    mInterstitialAd.setAdListener(new AdListener() {
+//
+//        @Override
+//        public void onAdLoaded() {
+//            //Remove show() code from here
+////            mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//            Toast.makeText(MoviesGameActivity.this, "eee", Toast.LENGTH_SHORT).show();
+//        }
+//    });
 //        mInterstitialAd.setAdListener(new AdListener() {
 //            @Override
 //            public void onAdClosed() {
 //                // Load the next interstitial.
-//                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//                super.onAdClosed();
+//                try {
+//                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }//                Toast.makeText(MoviesGameActivity.this, "onAdClosed", Toast.LENGTH_SHORT).show();
 //            }
 //
+//
+//            @Override
+//            public void onAdFailedToLoad(int i) {
+//                super.onAdFailedToLoad(i);
+//                try {
+//                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
+//            }
+//
+//            public void onAdLoaded() {
+//                // Load the next interstitial.
+//                super.onAdLoaded();
+//                try {
+//                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }
+//                //                Toast.makeText(MoviesGameActivity.this, "onAdLoaded", Toast.LENGTH_SHORT).show();
+//            }
+////
 //        });
+
+
+    loadRewardedVideoAd();
+
 }catch (Exception e){
     e.printStackTrace();
 }
     }
+    private RewardedVideoAd mRewardedVideoAd;
 
-    private InterstitialAd mInterstitialAd;
-    private static String appID = "ca-app-pub-6197752096190071~2087164686";
-    private static final String AD_UNIT_ID = "ca-app-pub-6197752096190071/6708349242"; // admob id
+//    private InterstitialAd mInterstitialAd;
+    private static String appID ="ca-app-pub-6197752096190071~2241123642"; //"ca-app-pub-6197752096190071~2087164686";
+    private static final String AD_UNIT_ID = "ca-app-pub-6197752096190071/7877180434";//"ca-app-pub-6197752096190071/6708349242"; // admob id
 
 // ******************************** For Admob
+private void loadRewardedVideoAd() {
+    mRewardedVideoAd.loadAd(AD_UNIT_ID,
+            new AdRequest.Builder().build());
+}
+    @Override
+    public void onRewarded(RewardItem reward) {
+        Toast.makeText(this, "onRewarded! currency: " + reward.getType() + "  amount: " +
+                reward.getAmount(), Toast.LENGTH_SHORT).show();
+        // Reward the user.
+    }
+
+    @Override
+    public void onRewardedVideoAdLeftApplication() {
+        Toast.makeText(this, "onRewardedVideoAdLeftApplication",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRewardedVideoAdClosed() {
+        Toast.makeText(this, "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show();
+        loadRewardedVideoAd();
+
+    }
+
+    @Override
+    public void onRewardedVideoAdFailedToLoad(int errorCode) {
+        Toast.makeText(this, "onRewardedVideoAdFailedToLoad", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRewardedVideoAdLoaded() {
+        Toast.makeText(this, "onRewardedVideoAdLoaded", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRewardedVideoAdOpened() {
+        Toast.makeText(this, "onRewardedVideoAdOpened", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onRewardedVideoStarted() {
+        Toast.makeText(this, "onRewardedVideoStarted", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onRewardedVideoCompleted() {
+        Toast.makeText(this, "onRewardedVideoCompleted", Toast.LENGTH_SHORT).show();
+    }
 
     private void createBanner() {
 try {
-    if (mInterstitialAd.isLoaded()) {
-        mInterstitialAd.show();
+//    if (mInterstitialAd.isLoaded()) {
+//        mInterstitialAd.show();
+////        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//
+//
+//    } else {
+//    }
 
-    } else {
+    if (mRewardedVideoAd.isLoaded()) {
+        mRewardedVideoAd.show();
+    }else{
+        loadRewardedVideoAd();
+
     }
 }catch (Exception e){
     e.printStackTrace();
@@ -292,8 +389,8 @@ try {
     @Override
     protected void onStop() {
         super.onStop();
-        isCountingDown = false;
     }
+
 
 
     private void startCountdown() {
@@ -558,6 +655,8 @@ try {
 
     }
 
+
+
     private enum Steps {
         player1_ready_to_play, player1_text, player1_game, scoreAfterPlayer1, player2_ready_to_play,
         player2_text, player2_game, scoreAfterPlayer2
@@ -682,6 +781,7 @@ try {
             @Override
             public void onClick(View v) {
                 final Intent intent = new Intent(MoviesGameActivity.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 runOnUiThread(new Thread() {
                     @Override
                     public void run() {
@@ -859,6 +959,31 @@ try {
         return myIntValue;
     }
 
+
+
+
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onResume() {
+        mRewardedVideoAd.resume(this);
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        mRewardedVideoAd.pause(this);
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        mRewardedVideoAd.destroy(this);
+        super.onDestroy();
+        this.wakeLock.release();
+        isCountingDown=false;
+    }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (Integer.parseInt(android.os.Build.VERSION.SDK) > 5
@@ -867,19 +992,21 @@ try {
             onBackPressed();
             return true;
         }
+
+
+
         return super.onKeyDown(keyCode, event);
     }
-
-
-    boolean doubleBackToExitPressedOnce = false;
 
 
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
+            isCountingDown=false;
+
             finish();
-            System.exit(0);
+          System.gc();
             return;
         }
 
@@ -894,4 +1021,8 @@ try {
             }
         }, 2000);
     }
+
+
+
+
 }

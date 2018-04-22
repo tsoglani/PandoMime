@@ -16,6 +16,8 @@
     android:layout_alignParentBottom="true"
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true">
+
+
     <TextView
         android:id="@+id/button_paroimies"
         android:background="@color/DarkOliveGreen"
@@ -120,4 +122,13 @@
         android:layout_alignParentEnd="true"
         android:onClick="pref_function"
         />
+
+    <Button
+        android:id="@+id/info_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/info"
+        android:onClick="showInfo"/>
 </RelativeLayout>
