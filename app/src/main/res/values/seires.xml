@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="seires">
+        <item>Χαμένοι στο διάστημα</item>
+        <item>7 Θανάσιμες Πεθερές</item>
+        <item>Λάμψη</item>
+        <item>Καλημέρα Ζωή</item>
+        <item>Τόλμη και γοητεία</item>
+        <item>Νοικοκυρές σε απόγνωση</item>
+        <item>Αληθινοί Ντεντέκτιβ</item>
+        <item>Ακρως οικογενειακον</item>
+        <item>Της Ελλάδος τα παιδιά</item>
+        <item>Πάτερ ημών</item>
+        <item>Μια σειρά απο ατυχή γεγονότα</item>
+        <item>Λούσιφερ</item>
+        <item>Μάγισσες</item>
+        <item>Φιλαράκια</item>
+        <item>Βαμμένος ήλιος</item>
+        <item>Λόγω τιμής</item>
+        <item>Ο Ιός του πατέρα</item>
+        <item>Παλίρροια</item>
+        <item>Σοφία ορθή</item>
+        <item>Το χρώμα του φεγγαριού</item>
+        <item>ΑΜΑΝ τα καθάρματα</item>
+        <item>Απιστίες</item>
+        <item>Ασυνήθεις ύποπτοι</item>
+        <item>Γλυκόξινο κρασί</item>
+        <item>Διακοπή για Διαφημίσεις</item>
+        <item>Δανεικός πατέρας</item>
+        <item>Διπλανή πόρτα</item>
+        <item>Δυό ξένοι</item>
+        <item>Είμαστε στον αέρα</item>
+        <item>Η αγάπη άργησε μια μέρα</item>
+        <item>Και οι παντρεμένοι έχουν ψυχή </item>
+        <item>Καραμπόλα</item>
+        <item>Καρρέ της Ντάμας</item>
+        <item>Μια νύχτα σαν κι αυτή</item>
+        <item>Ο κακός Βεζίρης</item>
+        <item>Το τίμημα του πάθους</item>
+        <item>Το χρήμα στο λαιμό σας</item>
+        <item>Φρούτα εποχής</item>
+        <item>Ψίθυροι καρδιάς</item>
+        <item>Άγγιγμα ψυχής</item>
+        <item>Απαγορευμένη αγάπη</item>
+        <item>Εγκλήματα</item>
+        <item>Επιθυμίες</item>
+        <item>Η ζωή που δεν έζησα</item>
+        <item>Θύματα Ειρήνης</item>
+        <item>Κωνσταντίνου και Ελένης</item>
+        <item>Με δυο μαμάδες</item>
+        <item>Νταντά για όλες τις δουλειές</item>
+        <item>Ο μεγάλος θυμός</item>
+        <item>Οι άνδρες δεν υπάρχουν πια</item>
+        <item>Σαν αδελφές</item>
+        <item>Το κλειδί</item>
+        <item>Το σημάδι του έρωτα</item>
+        <item>Τρικυμία</item>
+        <item>Για μια θέση στον ήλιο</item>
+        <item>Ερασιτέχνης άνθρωπος</item>
+        <item>Η ζωή μας μια βόλτα </item>
+        <item>Θα σε δω στο πλοίο</item>
+        <item>Κάτι τρέχει με τους δίπλα</item>
+        <item>Σύνορα αγάπης</item>
+        <item>Δέκα λεπτά κήρυγμα</item>
+        <item>Κάπου σε ξέρω</item>
+        <item>Μαύρος ωκεανός</item>
+        <item>Τι ψυχή θα παραδώσεις μωρή</item>
+        <item>Άκρως οικογενειακόν</item>
+        <item>Απαγορευμένη αγάπη</item>
+        <item>Βότκα Πορτοκάλι</item>
+        <item>Για μια γυναίκα κι ένα αυτοκίνητο</item>
+        <item>Δακρυσμένα φεγγάρια</item>
+        <item>Είσαι το ταίρι μου</item>
+        <item>Κόκκινος Κύκλος</item>
+        <item>Όσο υπάρχει αγάπη</item>
+        <item>Στο δρόμο της καρδιάς</item>
+        <item>Τι συμβαίνει με τον Χάρη;</item>
+        <item>Για πάντα φίλες</item>
+        <item>Οι στάβλοι της Εριέττας Ζαΐμη</item>
+        <item>Σ’ αγαπώ – μ’ αγαπάς</item>
+        <item>Αντίστροφη μέτρηση</item>
+        <item>Απόσταση αναπνοής</item>
+        <item>Η Νταντά</item>
+        <item>Σαββατογεννημένες</item>
+        <item>Σαν το σκύλο με τη γάτα</item>
+        <item>Το καφέ της Χαράς</item>
+        <item>10η Εντολή</item>
+        <item>Βέρα στο δεξί</item>
+        <item>Εραστής Δυτικών Προαστίων</item>
+        <item>Δυο μέρες μόνο</item>
+        <item>Οι μάγισσες της Σμύρνης</item>
+        <item>Πες μου ναι</item>
+        <item>Σα γλυκό του κουταλιού</item>
+        <item>Το κόκκινο δωμάτιο</item>
+        <item>Άν με αγαπάς</item>
+        <item>Εντιμότατοι... κερατάδες</item>
+        <item>Ήρθε κι έδεσε</item>
+        <item>Λούφα και παραλλαγή</item>
+        <item>Μαρία η άσχημη</item>
+        <item>Οι ιστορίες του αστυνόμου Μπέκα</item>
+        <item>Πόσο γλυκά με σκοτώνεις</item>
+        <item>Πολυθρόνα για τρεις</item>
+        <item>Στο παρα 5</item>
+        <item>Ευτυχισμένοι μαζί</item>
+        <item>Κλεμμένη ζωή</item>
+        <item>Λατρεμένοι μου γείτονες</item>
+        <item>Μπαμπά μην τρέχεις</item>
+        <item>Υπέροχα πλάσματα</item>
+        <item>Φίλα το βάτραχο σου</item>
+        <item>Αν υπήρχες θα σε χώριζα</item>
+        <item>Ο Τιμωρός</item>
+        <item>Εκεινες και εγώ</item>
+        <item>The Walking Dead</item>
+        <item>The Big Bang Theory</item>
+        <item>Breaking Bad</item>
+        <item>Game of Thrones</item>
+        <item>Sherlock</item>
+        <item>Απαράδεκτοι</item>
+        <item>Δέκα μικροί Μήτσοι</item>
+        <item>Η Αίθουσα του Θρόνου</item>
+        <item>Το Νησί</item>
+        <item>Η Πολυκατοικία</item>
+        <item>L.A.P.D.</item>
+        <item>Ο πόλεμος των άστρων</item>
+        <item>Οι Βασιλιάδες</item>
+        <item>Μην αρχίζεις τη μουρμούρα</item>
+        <item>Οι Συμμαθητές</item>
+        <item>Οικογενειακές Ιστορίες</item>
+        <item>Θα βρεις το δάσκαλό σου</item>
+        <item>Πλάκα κάνεις</item>
+        <item>Για μια γυναίκα και ένα αυτοκίνητο</item>
+        <item>Λίφτινγκ</item>
+        <item>Οι Μεν Και Οι Δεν</item>
+        <item>Singles</item>
+        <item>Disney club</item>
+        <item>Τα 7 κακά της μοίρας μου</item>
+        <item>Ο Χριστός Ξανασταυρώνεται</item>
+        <item>Ντόλτσε Βίτα</item>
+        <item>Safe sex</item>
+        <item>Αν θυμηθείς τo όνειρό μου</item>
+        <item>Το πιο γλυκό μου ψέμα</item>
+        <item>Στρίβειν δια του αρραβώνος</item>
+        <item>Σ αγαπώ μ αγαπάς</item>
+        <item>Πες το ψέματα</item>
+        <item>Οι μικρομεσαίοι</item>
+        <item>Λίστα γάμου</item>
+        <item>Κανείς δε λέει σε αγαπώ</item>
+        <item>Χάι Ροκ</item>
+        <item>Two and half men</item>
+        <item>Black Mirror</item>
+        <item>Rick and Morty</item>
+        <item>The Flash</item>
+        <item>Οι Διώκτες του Εγκλήματος</item>
+        <item>Monk</item>
+        <item>House M.D.</item>
+        <item>Spartacus</item>
+        <item>Stranger Things</item>
+        <item>Narcos</item>
+        <item>Dexter</item>
+        <item>Το λούνα παρκ</item>
+        <item>Το ρετιρέ</item>
+        <item>Παράλληλοι δρόμοι</item>
+        <item>Ανατομία ενός εγκλήματος</item>
+        <item>Μάνα είναι μόνο μία</item>
+        <item>Δις εξαμαρτείν</item>
+        <item>Εμείς κι εμείς</item>
+        <item>Λάβ Σόρρυ</item>
+        <item>Το τελευταίο αντίο</item>
+        <item>Σκορπιός</item>
+        <item>Η πρόβα του νυφικού</item>
+        <item>Καρέ της Ντάμας</item>
+        <item>Τα φτερά του έρωτα</item>
+        <item>Ου μοιχεύσεις</item>
+        <item>Τι ψυχή θα παραδώσεις μωρή </item>
+        <item>Αέρινες σιωπές</item>
+        <item>Περί ανέμων και υδάτων</item>
+        <item>Τρεις ευχές</item>
+        <item>Φιλοδοξίες</item>
+        <item>Η αγάπη ήρθε από μακρυά</item>
+        <item>Μη μου λες αντίο</item>
+        <item>Αστέρας Ραχούλας</item>
+        <item>Arrow</item>
+        <item>Gotham</item>
+        <item>Cosmos</item>
+        <item>Dragonball</item>
+        <item>Spiderman</item>
+        <item>X-men</item>
+        <item>Χελωνονιντζακια</item>
+        <item>Power Rangers</item>
+        <item>Batman</item>
+        <item>Sex And The City</item>
+        <item>Μπομπ Σφουγγαράκης</item>
+        <item>Οι Φλίντστοουνς</item>
+        <item>Σκουμπι ντου</item>
+        <item>O ροζ πάνθηρας</item>
+        <item>Παπιοπεριπέτειες</item>
+        <item>Αλαντίν</item>
+        <item>Τα Στρουμφάκια</item>
+        <item>South Park</item>
+        <item>The Simpsons</item>
+        <item>Mικρο μου πονυ</item>
+
+    </string-array>
+</resources>
