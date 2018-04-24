@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/game_center_layout"
+
     tools:context="pandomime.dr.tsoglanakos.myapplication.MoviesGameActivity">
 
 
@@ -21,7 +22,7 @@
 
         <TextView
             android:id="@+id/pandomima_text"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -29,7 +30,6 @@
             android:background="@drawable/center"
             android:gravity="center"
             android:textColor="@color/Chalk"
-            android:textIsSelectable="false"
             android:textSize="25dp"
             android:singleLine="false"
             android:maxWidth="80dp"

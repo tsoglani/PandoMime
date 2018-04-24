@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     protected static String ROUNDS = "game_rounds", TIME = "game_timer_per_game";
     private IndicatorSeekBar timer_seek_bar;
     private RadioGroup radioGroup;
-private String info="Παιχνίδι παντομίμας με τις αναγράφουσες υποκατηγορίες, μέσα στο παιχνίδι υπάρχει η επιλογή για αλλαγή της φράσης για κάθε ομάδα.\n\n " +
-        "Καλή διασκέδαση. \n\n\n\nDeveloper: Gaitanis Nikos\nDesigner: Giannis Tzortzis\nExternal partner: Alexandros Tomadakis.";
+private String info="Παιχνίδι παντομίμας με τις αναγράφομενες υποκατηγορίες. Μέσα στο παιχνίδι υπάρχει η επιλογή της αλλαγής του κειμένου αναπαράστασης πατώντας το κουμπί hint.\n\n " +
+        "Καλή διασκέδαση !\n\n\n\nDeveloper: Gaitanis Nikos\nDesigner: Giannis Tzortzis\nExternal partner: Alexandros Tomadakis.";
     public static enum TYPE {atakes, diafimiseis, tainies, seires, aisthisiakes, paroimies, mix}
 
     public static TYPE selectedType;
@@ -325,9 +325,9 @@ private String info="Παιχνίδι παντομίμας με τις αναγ�
 //        dialog.show();
 ////
         FancyAlertDialog dd=   new FancyAlertDialog.Builder(this)
-                .setTitle("Warning..")
+                .setTitle("Warning")
                 .setBackgroundColor(Color.parseColor("#303F9F"))  //Don't pass R.color.colorvalue
-                .setMessage("Caution, this category may contain mature content.!")
+                .setMessage("Caution, this category contains mature content !")
                 .setNegativeBtnText("Cancel")
                 .setPositiveBtnBackground(Color.parseColor("#FF4081"))  //Don't pass R.color.colorvalue
                 .setPositiveBtnText("Ok")
@@ -370,7 +370,7 @@ private String info="Παιχνίδι παντομίμας με τις αναγ�
                 .setTopColorRes(R.color.olive)
                 .setButtonsColorRes(R.color.costum_orange2)
                 .setIcon(R.drawable.ic_error_outline_black_24dp)
-                .setTitle("Πληροφορίες.!")
+                .setTitle("Πληροφορίες")
                 .setMessage(info)
                 .setPositiveButton(android.R.string.ok, new View.OnClickListener() {
                     @Override

@@ -81,21 +81,20 @@
         android:layout_alignStart="@+id/button_diafimiseis" />
 
 
-
     <TextView
         android:id="@+id/button_mix"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:textStyle="bold|italic"
+        android:layout_alignLeft="@+id/button_movies"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button_movies"
+        android:layout_marginBottom="10dp"
+        android:background="@color/costum_green"
         android:gravity="center"
+        android:text="Συνδυασμός"
         android:textIsSelectable="false"
         android:textSize="25dp"
-        android:layout_marginBottom="10dp"
-        android:text="Συνδιασμός"
-        android:background="@color/costum_green"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/button_movies"
-        android:layout_alignStart="@+id/button_movies" />
+        android:textStyle="bold|italic" />
     <TextView
         android:id="@+id/button_softcore"
         android:layout_width="150dp"

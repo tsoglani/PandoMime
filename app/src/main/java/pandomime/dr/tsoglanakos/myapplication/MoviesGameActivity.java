@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetFileDescriptor;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
@@ -31,6 +32,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,7 +40,7 @@ import java.util.HashSet;
 import java.util.List;
 
 
-public class MoviesGameActivity extends AppCompatActivity implements RewardedVideoAdListener{
+public class MoviesGameActivity extends AppCompatActivity implements RewardedVideoAdListener {
 
     private boolean isPlayerOne = true;
     private int gameRounds = 5;
@@ -67,9 +69,9 @@ public class MoviesGameActivity extends AppCompatActivity implements RewardedVid
     private MediaPlayer mp;
     private String skips_textString;
     private PowerManager.WakeLock wakeLock;
-   private boolean  playerAHaveOneMoreChance=true,playerBHaveOneMoreChance=true;
-
-
+    private String currentPhrase = null;
+    private boolean playerAHaveOneMoreChance = true, playerBHaveOneMoreChance = true;
+private int hiddenTextColor=R.color.transparent_white_percent_40;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,65 +169,67 @@ public class MoviesGameActivity extends AppCompatActivity implements RewardedVid
                                 if (isPlayerOne) {
                                     if (playerACountSkips < totalSkip) {
 
-                                                createBanner();
+                                        createBanner();
 
                                         playerACountSkips++;
                                         skips_textString = (totalSkip - playerACountSkips) + " Remain";
-                                        if ((totalSkip - playerACountSkips)==0){
-                                            skips_textString="You have to see a video, for one last skip..";
+                                        if ((totalSkip - playerACountSkips) == 0) {
+                                            skips_textString = "You have to see a video, for one last hint..";
                                         }
 
-                                    } else if (playerAHaveOneMoreChance){
-                                      createReward();
-                                      return;
-                                    }else{
+                                    } else if (playerAHaveOneMoreChance) {
+                                        createReward();
+                                        return;
+                                    } else {
 
 
-                                        if (playerAHaveOneMoreChance){
+                                        if (playerAHaveOneMoreChance) {
                                             runOnUiThread(new Thread() {
                                                 @Override
                                                 public void run() {
-                                                    Toast.makeText(MoviesGameActivity.this, "You have to see a video for one last skip..", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(MoviesGameActivity.this, "You have to see a video for one last hint..", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
-                                        }else{
-                                        runOnUiThread(new Thread() {
-                                            @Override
-                                            public void run() {
-                                                Toast.makeText(MoviesGameActivity.this, "You have no more Hints", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });}
+                                        } else {
+                                            runOnUiThread(new Thread() {
+                                                @Override
+                                                public void run() {
+                                                    Toast.makeText(MoviesGameActivity.this, "You have no more Hints", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+                                        }
                                         return;
                                     }
                                 } else {
                                     if (playerBCountSkips < totalSkip) {
                                         playerBCountSkips++;
                                         skips_textString = (totalSkip - playerBCountSkips) + " Remain";
-                                                createBanner();
-                                        if ((totalSkip - playerBCountSkips)==0){
-                                            skips_textString="You have to see the video for one last skip..";
+                                        createBanner();
+                                        if ((totalSkip - playerBCountSkips) == 0) {
+                                            skips_textString = "You have to see the video for one last hint..";
                                         }
 
-                                    }else if (playerBHaveOneMoreChance){
+                                    } else if (playerBHaveOneMoreChance) {
                                         createReward();
                                         return;
 
                                     } else {
 
-                                        if (playerAHaveOneMoreChance){
+                                        if (playerAHaveOneMoreChance) {
                                             runOnUiThread(new Thread() {
                                                 @Override
                                                 public void run() {
-                                                    Toast.makeText(MoviesGameActivity.this, "You have to see the video for one last skip..", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(MoviesGameActivity.this, "You have to see the video for one last hint..", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
-                                        }else{
-                                        runOnUiThread(new Thread() {
-                                            @Override
-                                            public void run() {
-                                                Toast.makeText(MoviesGameActivity.this, "You have no more Hints", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });}
+                                        } else {
+                                            runOnUiThread(new Thread() {
+                                                @Override
+                                                public void run() {
+                                                    Toast.makeText(MoviesGameActivity.this, "You have no more Hints", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+                                        }
                                         return;
                                     }
 
@@ -246,67 +250,67 @@ public class MoviesGameActivity extends AppCompatActivity implements RewardedVid
             }
         });
 
-try {
-    MobileAds.initialize(this, appID);
+        try {
+            MobileAds.initialize(this, appID);
 
 //        AdView  mAdView = (AdView) findViewById(R.id.adView);
 //        AdRequest adRequest = new AdRequest.Builder().build();
 //        mAdView.loadAd(adRequest);
-    mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-    mRewardedVideoAd.setRewardedVideoAdListener(this);
-    loadRewardedVideoAd();
+            mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
+            mRewardedVideoAd.setRewardedVideoAdListener(this);
+            loadRewardedVideoAd();
 
-    mInterstitialAd = new InterstitialAd(this);
-    mInterstitialAd.setAdUnitId(AD_UNIT_ID2);
-    mInterstitialAd.loadAd(new AdRequest.Builder().build());
+            mInterstitialAd = new InterstitialAd(this);
+            mInterstitialAd.setAdUnitId(AD_UNIT_ID2);
+            mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                // Load the next interstitial.
-                super.onAdClosed();
-                try {
-                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                }catch (Exception e){
-                    e.printStackTrace();
-                }//                Toast.makeText(MoviesGameActivity.this, "onAdClosed", Toast.LENGTH_SHORT).show();
-            }
-
-
-            @Override
-            public void onAdFailedToLoad(int i) {
-                super.onAdFailedToLoad(i);
-                try {
-                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                }catch (Exception e){
-                    e.printStackTrace();
+            mInterstitialAd.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    // Load the next interstitial.
+                    super.onAdClosed();
+                    try {
+                        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }//                Toast.makeText(MoviesGameActivity.this, "onAdClosed", Toast.LENGTH_SHORT).show();
                 }
-            }
 
-            public void onAdLoaded() {
-                // Load the next interstitial.
-                super.onAdLoaded();
-                try {
-                    mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                }catch (Exception e){
-                    e.printStackTrace();
+
+                @Override
+                public void onAdFailedToLoad(int i) {
+                    super.onAdFailedToLoad(i);
+                    try {
+                        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
-                //                Toast.makeText(MoviesGameActivity.this, "onAdLoaded", Toast.LENGTH_SHORT).show();
-            }
+
+                public void onAdLoaded() {
+                    // Load the next interstitial.
+                    super.onAdLoaded();
+                    try {
+                        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    //                Toast.makeText(MoviesGameActivity.this, "onAdLoaded", Toast.LENGTH_SHORT).show();
+                }
 //
-        });
+            });
 
 
-
-}catch (Exception e){
-    e.printStackTrace();
-}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
     private RewardedVideoAd mRewardedVideoAd;
 
     private InterstitialAd mInterstitialAd;
-    private static String appID ="ca-app-pub-6197752096190071~2241123642"; //"ca-app-pub-6197752096190071~2087164686";
-    private static final String AD_UNIT_REWARD_ID = "ca-app-pub-6197752096190071/7877180434",AD_UNIT_ID2="ca-app-pub-6197752096190071/6708349242";
+    private static String appID = "ca-app-pub-6197752096190071~2241123642"; //"ca-app-pub-6197752096190071~2087164686";
+    private static final String AD_UNIT_REWARD_ID = "ca-app-pub-6197752096190071/7877180434", AD_UNIT_ID2 = "ca-app-pub-6197752096190071/6708349242";
 
 
     //user id reward   ->  ca-app-pub-6197752096190071/7877180434
@@ -314,11 +318,12 @@ try {
     //"ca-app-pub-6197752096190071/6708349242"; // admob id
 // testing reward -> ca-app-pub-3940256099942544/5224354917
 // ******************************** For Admob
-    boolean isVideoFailedToOpen=false;
-private void loadRewardedVideoAd() {
-    mRewardedVideoAd.loadAd(AD_UNIT_REWARD_ID,
-            new AdRequest.Builder().build());
-}
+//    boolean isVideoFailedToOpen=false;
+    private void loadRewardedVideoAd() {
+        mRewardedVideoAd.loadAd(AD_UNIT_REWARD_ID,
+                new AdRequest.Builder().build());
+    }
+
     @Override
     public void onRewarded(RewardItem reward) {
 
@@ -338,12 +343,10 @@ private void loadRewardedVideoAd() {
 
     @Override
     public void onRewardedVideoAdFailedToLoad(int errorCode) {
-        isVideoFailedToOpen=true;
     }
 
     @Override
     public void onRewardedVideoAdLoaded() {
-        isVideoFailedToOpen=false;
     }
 
     @Override
@@ -357,54 +360,58 @@ private void loadRewardedVideoAd() {
     @Override
     public void onRewardedVideoCompleted() {
 
-        if (isPlayerOne){
+        if (isPlayerOne) {
 
-            playerAHaveOneMoreChance=false;
-        }else{
-            playerBHaveOneMoreChance=false;
+            playerAHaveOneMoreChance = false;
+        } else {
+            playerBHaveOneMoreChance = false;
 
         }
         runOnUiThread(new Thread() {
             @Override
             public void run() {
                 pandomima_text.setText(getAPandomimaText());
-                skips_textString="You have no more Hints" ;
+                skips_textString = "You have no more Hints";
                 skips_text_view.setText(skips_textString);
             }
         });
     }
 
     private void createBanner() {
-try {
-    if (mInterstitialAd.isLoaded()) {
-        mInterstitialAd.show();
+        try {
+            if (mInterstitialAd.isLoaded()) {
+                mInterstitialAd.show();
 //        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
 
-    } else {
-    }
+            } else {
+            }
 
 
-}catch (Exception e){
-    e.printStackTrace();
-}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
     private void createReward() {
         try {
-
-if(isVideoFailedToOpen){
-    Toast.makeText(this, "Faild to play video, try again later..", Toast.LENGTH_SHORT).show();
-
-}
-
             if (mRewardedVideoAd.isLoaded()) {
                 mRewardedVideoAd.show();
-            }else {
+            } else {
                 loadRewardedVideoAd();
+                runOnUiThread(new Thread() {
+                @Override
+                public void run() {
+
+                    Toast.makeText(MoviesGameActivity.this, "Failed to play, try again later", Toast.LENGTH_SHORT).show();
+
+
+                }
+            });
 
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -439,7 +446,6 @@ if(isVideoFailedToOpen){
     }
 
 
-
     private void startCountdown() {
         isCountingDown = true;
         if (timerThread == null || !timerThread.isAlive()) {
@@ -447,7 +453,7 @@ if(isVideoFailedToOpen){
 
             if (MainActivity.selectedType == MainActivity.TYPE.aisthisiakes) {
 //Indigo
-                runOnUiThread(new Thread(){
+                runOnUiThread(new Thread() {
                     @Override
                     public void run() {
                         count_down.setTextColor(getResources().getColor(R.color.black));
@@ -458,7 +464,7 @@ if(isVideoFailedToOpen){
             }
 
 
-                timerThread = new Thread() {
+            timerThread = new Thread() {
                 @Override
                 public void run() {
                     while (curentTimer >= 0 && isCountingDown) {
@@ -574,8 +580,45 @@ if(isVideoFailedToOpen){
     }
 
     private Rect rect;    // Variable rect to hold the bounds of the view
-
+private final String texnInvisibleString="Εμφάνηση/Απόλρυψη κειμένου";
     private void initListeners() {
+
+        pandomima_text.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
+                    if (curentsStep == Steps.player2_game||curentsStep == Steps.player1_game) {
+                        runOnUiThread(new Thread(){
+                            @Override
+                            public void run() {
+                                Typeface tf = Typeface.createFromAsset(getAssets(), "Gecko_PersonalUseOnly.ttf");
+                                pandomima_text.setTextColor(getResources().getColor(R.color.Chalk));
+
+                                pandomima_text.setTypeface(tf);
+                                pandomima_text.setText(currentPhrase);
+                            }
+                        });
+
+                    }
+                } else if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
+
+                    if (curentsStep == Steps.player2_game||curentsStep == Steps.player1_game) {
+runOnUiThread(new Thread(){
+    @Override
+    public void run() {
+
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "ACBlur.ttf");
+        pandomima_text.setTypeface(tf);
+        pandomima_text.setTextColor(getResources().getColor(hiddenTextColor));
+        pandomima_text.setText(texnInvisibleString);
+    }
+});
+                    }
+                }
+                return true;
+            }
+        });
         start_game_button.setOnTouchListener(new View.OnTouchListener() {
             public boolean onTouch(View view, MotionEvent event) {
                 if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
@@ -689,7 +732,7 @@ if(isVideoFailedToOpen){
                                 // User moved inside bounds
 
 
-                                curentScore += 20 + (int) (((float) curentTimer / totalTime * 20.0));
+                                curentScore += 10 + (int) (((float) curentTimer / totalTime * 10.0));
                                 next();
 
                             }
@@ -702,7 +745,6 @@ if(isVideoFailedToOpen){
         });
 
     }
-
 
 
     private enum Steps {
@@ -731,16 +773,30 @@ if(isVideoFailedToOpen){
             runOnUiThread(new Thread() {
                 @Override
                 public void run() {
+
                     start_game_button.setVisibility(View.INVISIBLE);
                     skip_button.setVisibility(View.INVISIBLE);
                     skips_text_view.setVisibility(View.INVISIBLE);
                     correct_button.setVisibility(View.VISIBLE);
                     wrong_button.setVisibility(View.VISIBLE);
                     startGame();
+                    Typeface tf = Typeface.createFromAsset(getAssets(), "ACBlur.ttf");
+                    pandomima_text.setTypeface(tf);
+                    pandomima_text.setTextColor(getResources().getColor(hiddenTextColor));
+                    pandomima_text.setText(texnInvisibleString);
+
                 }
             });
         } else if (curentsStep == Steps.player1_game) {
             curentsStep = Steps.scoreAfterPlayer1;
+            runOnUiThread(new Thread(){
+                @Override
+                public void run() {
+                    Typeface tf = Typeface.createFromAsset(getAssets(), "Gecko_PersonalUseOnly.ttf");
+                    pandomima_text.setTypeface(tf);
+                    pandomima_text.setTextColor(getResources().getColor(R.color.Chalk));                }
+            });
+
             showScore();
         } else if (curentsStep == Steps.scoreAfterPlayer1) {
             curentsStep = Steps.player2_ready_to_play;
@@ -784,10 +840,24 @@ if(isVideoFailedToOpen){
                     correct_button.setVisibility(View.VISIBLE);
                     wrong_button.setVisibility(View.VISIBLE);
                     startGame();
+
+                    Typeface tf = Typeface.createFromAsset(getAssets(), "ACBlur.ttf");
+                    pandomima_text.setTypeface(tf);
+                    pandomima_text.setTextColor(getResources().getColor(hiddenTextColor));
+                    pandomima_text.setText(texnInvisibleString);
+
                 }
             });
         } else if (curentsStep == Steps.player2_game) {
             curentsStep = Steps.scoreAfterPlayer2;
+
+            runOnUiThread(new Thread(){
+                @Override
+                public void run() {
+                    Typeface tf = Typeface.createFromAsset(getAssets(), "Gecko_PersonalUseOnly.ttf");
+                    pandomima_text.setTypeface(tf);
+                    pandomima_text.setTextColor(getResources().getColor(R.color.Chalk));                }
+            });
             showScore();
         } else if (curentsStep == Steps.scoreAfterPlayer2) {
             curentsStep = Steps.player1_ready_to_play;
@@ -821,62 +891,67 @@ if(isVideoFailedToOpen){
     }
 
     private void gameOver() {
-
-        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final ViewGroup.LayoutParams default_layout_params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        final RelativeLayout finalView = (RelativeLayout) inflater.inflate(R.layout.final_view, null);
-        finalView.setOnClickListener(new View.OnClickListener() {
+        runOnUiThread(new Thread() {
             @Override
-            public void onClick(View v) {
-                final Intent intent = new Intent(MoviesGameActivity.this, MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                runOnUiThread(new Thread() {
+            public void run() {
+                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                final ViewGroup.LayoutParams default_layout_params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                final RelativeLayout finalView = (RelativeLayout) inflater.inflate(R.layout.final_view, null);
+                finalView.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void run() {
-                        startActivity(intent);
+                    public void onClick(View v) {
+                        final Intent intent = new Intent(MoviesGameActivity.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        runOnUiThread(new Thread() {
+                            @Override
+                            public void run() {
+                                startActivity(intent);
+                            }
+                        });
                     }
                 });
+                if (playerAScore > playerBScore) {
+                    runOnUiThread(new Thread() {
+                        @Override
+                        public void run() {
+                            addContentView(finalView, default_layout_params);
+                            if (MainActivity.selectedType == MainActivity.TYPE.aisthisiakes) {
+                                finalView.setBackgroundResource(R.drawable.aisthisiakes_player_one_won);
+
+                            } else
+                                finalView.setBackgroundResource(R.drawable.player_one_won);
+                        }
+                    });
+                } else if (playerAScore < playerBScore) {
+                    runOnUiThread(new Thread() {
+                        @Override
+                        public void run() {
+                            addContentView(finalView, default_layout_params);
+                            if (MainActivity.selectedType == MainActivity.TYPE.aisthisiakes) {
+                                finalView.setBackgroundResource(R.drawable.aisthisiakes_player_two_won);
+
+                            } else
+                                finalView.setBackgroundResource(R.drawable.player_two_won);
+
+                        }
+                    });
+                } else {
+                    runOnUiThread(new Thread() {
+                        @Override
+                        public void run() {
+                            addContentView(finalView, default_layout_params);
+                            if (MainActivity.selectedType == MainActivity.TYPE.aisthisiakes) {
+                                finalView.setBackgroundResource(R.drawable.aisthisiakes_draw);
+
+                            } else
+                                finalView.setBackgroundResource(R.drawable.draw);
+
+                        }
+                    });
+                }
             }
         });
-        if (playerAScore > playerBScore) {
-            runOnUiThread(new Thread() {
-                @Override
-                public void run() {
-                    addContentView(finalView, default_layout_params);
-                    if (MainActivity.selectedType == MainActivity.TYPE.aisthisiakes) {
-                        finalView.setBackgroundResource(R.drawable.aisthisiakes_player_one_won);
 
-                    } else
-                        finalView.setBackgroundResource(R.drawable.player_one_won);
-                }
-            });
-        } else if (playerAScore < playerBScore) {
-            runOnUiThread(new Thread() {
-                @Override
-                public void run() {
-                    addContentView(finalView, default_layout_params);
-                    if (MainActivity.selectedType == MainActivity.TYPE.aisthisiakes) {
-                        finalView.setBackgroundResource(R.drawable.aisthisiakes_player_two_won);
-
-                    } else
-                        finalView.setBackgroundResource(R.drawable.player_two_won);
-
-                }
-            });
-        } else {
-            runOnUiThread(new Thread() {
-                @Override
-                public void run() {
-                    addContentView(finalView, default_layout_params);
-                    if (MainActivity.selectedType == MainActivity.TYPE.aisthisiakes) {
-                        finalView.setBackgroundResource(R.drawable.aisthisiakes_draw);
-
-                    } else
-                        finalView.setBackgroundResource(R.drawable.draw);
-
-                }
-            });
-        }
 
     }
 
@@ -895,26 +970,28 @@ if(isVideoFailedToOpen){
     }
 
     private void next() {
+        runOnUiThread(new Thread() {
+            @Override
+            public void run() {
+                enumPlusPlus();// allazei state
+                if (curentsStep == (Steps.player1_text) || curentsStep == (Steps.player2_text)) {
 
-        enumPlusPlus();// allazei state
-        if (curentsStep == (Steps.player1_text) || curentsStep == (Steps.player2_text)) {
 
-
-            pandomima_text.setText(getAPandomimaText());
-        }
+                    pandomima_text.setText(getAPandomimaText());
+                }
+            }
+        });
 
 
     }
 
 
-
-
     private String getAPandomimaText() {
-        String str = null;
-        int randomTextId = (int) (Math.random() * movies.size());
-        str = movies.remove(randomTextId);
 
-        return str;
+        int randomTextId = (int) (Math.random() * movies.size());
+        currentPhrase = movies.remove(randomTextId);
+
+        return currentPhrase;
     }
 
     private void initComponents() {
@@ -1008,8 +1085,6 @@ if(isVideoFailedToOpen){
     }
 
 
-
-
     boolean doubleBackToExitPressedOnce = false;
 
     @Override
@@ -1030,24 +1105,28 @@ if(isVideoFailedToOpen){
     public void onDestroy() {
         mRewardedVideoAd.destroy(this);
         super.onDestroy();
-        isCountingDown=false;
+        isCountingDown = false;
     }
-
 
 
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
-            isCountingDown=false;
+            isCountingDown = false;
 
             finish();
-          System.gc();
+            System.gc();
             return;
         }
 
         this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Click BACK again to go to menu", Toast.LENGTH_SHORT).show();
+        runOnUiThread(new Thread() {
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext(), "Click BACK again to go to menu", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         new Handler().postDelayed(new Runnable() {
 
@@ -1069,12 +1148,8 @@ if(isVideoFailedToOpen){
         }
 
 
-
         return super.onKeyDown(keyCode, event);
     }
-
-
-
 
 
 }
