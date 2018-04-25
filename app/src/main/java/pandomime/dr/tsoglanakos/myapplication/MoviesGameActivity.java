@@ -90,7 +90,7 @@ private int hiddenTextColor=R.color.transparent_white_percent_40;
         totalTime = getValue(MainActivity.TIME, 120);
         gameRounds = getValue(MainActivity.ROUNDS, 5);
 
-        totalSkip = (gameRounds / 5) * 3;
+        totalSkip = (gameRounds / 5) * 4;
 
 
         skip_button = (Button) findViewById(R.id.skip_button);
@@ -310,7 +310,8 @@ private int hiddenTextColor=R.color.transparent_white_percent_40;
 
     private InterstitialAd mInterstitialAd;
     private static String appID = "ca-app-pub-6197752096190071~2241123642"; //"ca-app-pub-6197752096190071~2087164686";
-    private static final String AD_UNIT_REWARD_ID = "ca-app-pub-6197752096190071/7877180434", AD_UNIT_ID2 = "ca-app-pub-6197752096190071/6708349242";
+    private static final String AD_UNIT_REWARD_ID = "ca-app-pub-6197752096190071/7877180434",
+            AD_UNIT_ID2 = "ca-app-pub-6197752096190071/6708349242";
 
 
     //user id reward   ->  ca-app-pub-6197752096190071/7877180434
@@ -580,7 +581,7 @@ private int hiddenTextColor=R.color.transparent_white_percent_40;
     }
 
     private Rect rect;    // Variable rect to hold the bounds of the view
-private final String texnInvisibleString="Εμφάνηση/Απόλρυψη κειμένου";
+private final String texnInvisibleString="Εμφάνιση/Απόκρυψη κειμένου";
     private void initListeners() {
 
         pandomima_text.setOnTouchListener(new View.OnTouchListener() {
@@ -806,6 +807,7 @@ runOnUiThread(new Thread(){
                     scoreView.setVisibility(View.INVISIBLE);
                     pandomima_text.setVisibility(View.VISIBLE);
                     imageView.setVisibility(View.VISIBLE);
+
                     if (MainActivity.selectedType == MainActivity.TYPE.aisthisiakes) {
                         imageView.setBackgroundResource(R.drawable.aisthisiakes_player_two);
 
