@@ -4,11 +4,11 @@ android {
     compileSdkVersion 26
     buildToolsVersion "27.0.3"
     defaultConfig {
-        applicationId "pando.tsoglanakos.mime"
+        applicationId "pando.dr.tsoglanakos.mima"
         minSdkVersion 19
         targetSdkVersion 25
-        versionCode 3
-        versionName "1.2"
+        versionCode 1
+        versionName "1.1"
     }
     buildTypes {
         release {
@@ -32,7 +32,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.yarolegovich:lovely-dialog:1.1.0'
     compile 'com.google.android.gms:play-services-ads:15.0.0'
-    compile 'com.google.firebase:firebase-core:15.0.0'
+    compile 'com.google.firebase:firebase-core:16.0.4'
     compile 'com.google.firebase:firebase-ads:15.0.0'
     testCompile 'junit:junit:4.12'
 }

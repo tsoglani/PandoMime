@@ -3,75 +3,129 @@
 
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/b7daf827cfd67d5d5670db5c829c8561c1ad90ce/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/fed826e4ed13e189b57c8a9eeb1c66857c43811c/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="0165a9fb28c8333504f837916f8b32c1ee38afca">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_1daba2f9f87e34fdb0ffea98f13a4e3f862edd44.jar" />
+        sha1="5b9f57b1fb76487516b73b908f54c60c48202d84">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_f97ff9642ea818417339eb32ed0941cbfaa9698d.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/f404aa1e7b4c1c29bfda194cb552faa21f20421a/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/fa09a5306f688d6104e9eea31ff19ede30286988/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="73c6558aeae89d52c3ab66e6e855b18ed808986b">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_60e6ef3af6427a6dba32c73588aadf5546fda5dc.jar" />
+        sha1="85a55b3892bcf1a7da4d4bf4353460c84b1b4754">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_8b59fa911b456934a1ea7461bd2bdcbb96c5b44b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/43bbabaad2b4f9c28aa82f07a55def167a041a33/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/506d8c691c1205f141de9591e7083423a672ae87/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="54bbec708e0e3b55413da10223c54a1f61ae0c0c">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_00ff2bed09b58e8bd6c0987fcdd8533766637eeb.jar" />
+        sha1="9d0ff1960f148dafff5b945e8596c060ff3cf88e">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_aa34a0d69c566ab6fb30704a4b81e7ab2a471e78.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/7af6bf7352499cbdbc17d42b970e0a1527f1655e/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/c57675159ab1634fa8fdd99752ec439af2534677/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="34f5bdf6595d0e5647e6ff5380bae62c97fe572b">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_fa9836d8cd51ba1289270403d346072176a1ef31.jar" />
+        sha1="9b7b9f800b62f974cd3a75faf1720c010c7ac244">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_7243aff3f1389d28983040daa90385ac18b0e602.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/26023d8a0340432adbdf5da3c31db9f023a8d073/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/88702d2a39c4d1b77e56476a36892fe92038f15d/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="50fe77ff10df20e52e887c0ab44bad8b9ca1760f">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_e3ba79b98569f25deab5a0156a63c7a36425be08.jar" />
+        sha1="1b87a54850054c5ed5a2e14153a0b51e13f72f15">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_79b030598bc686d072d74002319f8fd385257789.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/b0533436bd3a29e346b0c7c60842bc0a1e53bed4/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/734942b3324a485c93d6b4ba51923cb51fdd3101/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="c07188f722ee6dd9106ef86d8bffb125e9735fb6">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_9ce2965632ed0bb0ad9cd8549d9c235ce4b3062e.jar" />
+        sha1="a08c6dadfd96a281d9fddf59a767749e43064c23">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_d7e849f2f805b18dffb75575f2fd2416d9914105.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/89a55f0672489e24e48d7c27ea771470bd255d28/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/7cf7d242023c06a46cab8dcff1abe75a2f99256a/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="e92f73c64f9b7113a11b75a483016ab4ac335d5a">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_647f186bd9d7f0ed828da9c98f0f367a3f50525f.jar" />
+        sha1="3f3a7bc101bb56e328e22399008443d41162419e">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_512a02d09ee7864cd306a646cd4eed19cf69b352.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/tsoglani/.android/build-cache/71ee5c87a7b95a7ffd7c8128d1c7f874c1c421e0/output/jars/classes.jar"
+        jar="/home/tsoglani/.android/build-cache/eceb574d8af68dfd00de1e9b635aa881f7774cc6/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.3"
-        sha1="c8a10dccac2dc5fc55aacaf0c4a91aab870d14fb">
-        <dex dex="/media/tsoglani/F921-DFB4/github/Cartoon_watch_face/MyApplication/app/build/intermediates/pre-dexed/debug/classes_6f4cb03728d6cc65ffa9da40b8f0784ab0950ef2.jar" />
+        sha1="4096514ce1185b89df80681e982486efa30e440e">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_42c75186c4280ff6e1846a83ab6ae357bf13d658.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/630c26f602fb3c598eb6a976cd10a011647c1f48/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c24fc193ef757801f3677e28cc150a6da574c48c">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_20cb5beb2eba2d613936efc868c86fef5758ebe4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/d12089a7090541eed4c95a93e0bc13489a364ed4/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="24c8e3677196a011b4351824ba2ab0e17ab1ca88">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_bd64f297ac25fcb2120c36d7eabd67623a9f3f27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/3a4a2d3d19a0d76eb20a45c9f488ef93c68b791c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="25cdd380f0a1b2f67a0b7253bbf1f343df981e5e">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_2787618ed064f6ddf8517273d628bff0270b0398.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/27ed07261cce883eb5bf30f52cef55acb1953a41/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a6716d5ca5aad59d26c856d4354b7ea560c2029e">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_8b1724c54b486783fa91269f33bdeb53439fb209.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/8e05386087a0f7deff68907cc2bd95b4ad22b0fb/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="694a642670bddee011a52670fc77f018d2b731e3">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_c0823e012ce6cbd43976d3cbc821f555490888b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/tsoglani/.android/build-cache/4f16647f0490413683fe2d3903ef2862021cc25c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.3"
+        sha1="dd86dfc9c6946cf3fc34ba8bebd49e0e0845a89e">
+        <dex dex="/media/tsoglani/Tsoglani/github/PandoMime/app/build/intermediates/pre-dexed/debug/classes_aafafeb5c55f2a5910f16e5a357b63d45932dfe8.jar" />
     </item>
 
 </items>
