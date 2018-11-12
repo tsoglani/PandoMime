@@ -52,7 +52,7 @@ public class MoviesGameActivity extends AppCompatActivity implements RewardedVid
     private int curentScore = 0;
 
     private ArrayList<String> movies = new ArrayList();
-    private int totalSkip = 3;
+    private int totalSkipA,totalSkipB = 1;
 
     private int playerACountSkips = 0, playerBCountSkips = 0;
 
@@ -90,7 +90,7 @@ private int hiddenTextColor=R.color.transparent_white_percent_40;
         totalTime = getValue(MainActivity.TIME, 120);
         gameRounds = getValue(MainActivity.ROUNDS, 5);
 
-        totalSkip = (gameRounds / 5) * 4;
+        totalSkipA =totalSkipB= 0;//(gameRounds / 5) * 4;
 
 
         skip_button = (Button) findViewById(R.id.skip_button);
@@ -167,13 +167,13 @@ private int hiddenTextColor=R.color.transparent_white_percent_40;
                                 // User moved inside bounds
 
                                 if (isPlayerOne) {
-                                    if (playerACountSkips < totalSkip) {
+                                    if (playerACountSkips < totalSkipA) {
 
                                         createBanner();
 
                                         playerACountSkips++;
-                                        skips_textString = (totalSkip - playerACountSkips) + " Remain";
-                                        if ((totalSkip - playerACountSkips) == 0) {
+                                        skips_textString = (totalSkipA - playerACountSkips) + " Remain";
+                                        if ((totalSkipA - playerACountSkips) == 0) {
                                             skips_textString = "You have to see a video, for one last hint..";
                                         }
 
@@ -201,11 +201,11 @@ private int hiddenTextColor=R.color.transparent_white_percent_40;
                                         return;
                                     }
                                 } else {
-                                    if (playerBCountSkips < totalSkip) {
+                                    if (playerBCountSkips < totalSkipB) {
                                         playerBCountSkips++;
-                                        skips_textString = (totalSkip - playerBCountSkips) + " Remain";
+                                        skips_textString = (totalSkipB - playerBCountSkips) + " Remain";
                                         createBanner();
-                                        if ((totalSkip - playerBCountSkips) == 0) {
+                                        if ((totalSkipB - playerBCountSkips) == 0) {
                                             skips_textString = "You have to see the video for one last hint..";
                                         }
 
@@ -763,12 +763,12 @@ runOnUiThread(new Thread(){
                     start_game_button.setVisibility(View.VISIBLE);
                     skip_button.setVisibility(View.VISIBLE);
                     skips_text_view.setVisibility(View.VISIBLE);
-                    skips_text_view.setText((totalSkip - playerACountSkips) + " Remains");
+                    totalSkipA++;
+                    skips_text_view.setText((totalSkipA - playerACountSkips) + " Remains");
 
                 }
             });
         } else if (curentsStep == Steps.player1_text) {
-
             curentsStep = Steps.player1_game;
 
             runOnUiThread(new Thread() {
@@ -825,7 +825,8 @@ runOnUiThread(new Thread(){
                 public void run() {
                     start_game_button.setVisibility(View.VISIBLE);
                     skip_button.setVisibility(View.VISIBLE);
-                    skips_text_view.setText((totalSkip - playerBCountSkips) + " Remains");
+                    totalSkipB++;
+                    skips_text_view.setText((totalSkipB - playerBCountSkips) + " Remains");
                     skips_text_view.setVisibility(View.VISIBLE);
 
                 }
